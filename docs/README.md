@@ -2,20 +2,15 @@
 
 ## Oefening 1 - Media Query Drill
 
-Open de map **oefening01**. Merk op dat de index.html slechts 1 p-element bevat met daarin een leeg span-element. De bedoeling van deze oefening is dat de tekst die in de span verschijnt aangepast wordt volgens de grootte van het scherm.
+Open de map **oefening01**. Merk op dat de index.html slechts 1 p-element bevat met daarin een leeg span-element. De bedoeling van deze oefening is dat de tekst die in de span verschijnt aangepast wordt volgens de grootte van het browserscherm.
 
-- Voor schermen t.e.m. 480px breed wordt de tekst:
-  - Qua grootte lijkt mij dit een **mobiel** scherm
-- Voor schermen van 480.01px t.e.m. 786px breed wordt de tekst:
-  - Qua grootte lijkt mij dit een **tablet** scherm
-- Voor schermen van 786.01px t.e.m. 1024px breed wordt de tekst:
-  - Qua grootte lijkt mij dit een **klein** scherm
-- Voor schermen van 1024.01px t.e.m. 1200px breed wordt de tekst:
-  - Qua grootte lijkt mij dit een **groot** scherm
-- Voor schermen breder dan 1200px wordt de tekst:
-  - Qua grootte lijkt mij dit een **extra groot** scherm
+- grootte browserscherm < 480px: ... **mobiel** scherm
+- grootte browserscherm [480px, 768px[: ... **tablet** scherm
+- grootte browserscherm [768px, 1024px[: ...**klein** scherm
+- grootte browserscherm [1024px, 1200px[: ...**groot** scherm
+- grootte browserscherm >= 1200px: ... **extra groot** scherm
 
-Maak gebruik de **#size::before** CSS selector. Deze creëert een nieuw element en je kan de inhoud van dit element instellen door aan de **content** property de gewenste string toe te kennen. In **style.css** zie je hoe dit reeds standaard gebeurt voor de tekst **mobiel**.
+Maak gebruik de **#size::before** CSS selector. Deze creëert een nieuw element en je kan de inhoud van dit element instellen door aan de **content** property de gewenste string toe te kennen. In **style.css** zie je hoe dit reeds gebeurt voor de tekst **mobiel**.
 
 Zorg er ook voor dat wanneer het scherm in _landscape modus_ gebruikt wordt de achtergrond van de pagina **orangered** gekleurd is en er **witte** tekst gebruikt wordt; in _portrait modus_ wordt de achtergrond **honeydew** gekleurd.
 
@@ -49,7 +44,7 @@ Voeg nog een media query toe zodat de lay-out zich aanpast volgens bovenstaande 
 
 ## Oefening 3 - Resolution switching & lay-out
 
-In de map **oefening03** vind je een licht aangepaste versie van de oplossing van de oefening "The nature company" uit les 8.
+In de map **oefening03** vind je een aangepaste versie van de oplossing van de oefening "The nature company" uit les 8.
 
 Voor elke afbeelding zijn nu telkens twee versies (1x en 2x) beschikbaar.
 
@@ -59,13 +54,15 @@ Voor elke afbeelding zijn nu telkens twee versies (1x en 2x) beschikbaar.
   - Bekijk het verschil in laaddtijd voor de 1x en 2x afbeeldingen
   - Bekijk wat dit betekent voor iemand die de webpagina bekijkt over een (langzaam) 3G netwerk
 
-De layout van de pagina is momenteel afgestemd op 'mobile'. Gebruik een media query zodat de pagina zich aanpast als het scherm minstens 480px breed wordt:
+De layout van de pagina is momenteel afgestemd op 'mobile'. Stel breakpoints in zodat de lay-out zich als volgt aanpast.
 
-- De foto's worden in een grid van 3 kolommen getoond; zorg voor een ruimte van 1em tussen de kolommen
-- De navigatie in de footer wordt in een grid van 4 kolommen getoond; zorg voor een ruimte van 2em tussen de kolommen
-- De navigatie items met class 'box2' en 'box3', die in de mobiele versie verborgen zijn, moeten nu ook zichtbaar worden
-
-![nature3up](images/nature3up.png)
+- wanneer de viewport >= 720px
+  - zorg dat de div.box2 in de footer getoond wordt
+    ![nature](images/nature_720px.png)
+- wanneer de viewport >= 1024px
+  - zorg dat de div.box3 in de footer getoond wordt
+  - stel de flex-basis voor de fotos in op 25% (je ziet nu 3 foto's naast elkaar)
+    ![nature](images/nature_1024px.png)
 
 ## Oefening 4
 
@@ -73,7 +70,7 @@ Open de map **oefening04**.
 
 ### Stap 1 - Hero met art direction
 
-Pas **index.html** aan. In het **header** element voeg je, vóór het **h1** element een hero afbeelding toe. Maak hiervoor gebruik van de **svg** bestanden uit de map images en het **picture** element. Toon bij een schermbreedte kleiner of gelijk aan 700px de afbeelding _world-health-day-narrow_. Bij grotere schermbreedtes wordt dit de afbeelding _world-health-day-wide_. Bekijk het resultaat en zie hoe de afbeelding zich aanpast aan de schermbreedte.
+Pas **index.html** aan. In het **header** element voeg je, vóór het **h1** element een hero afbeelding toe. Maak hiervoor gebruik van de **svg** bestanden uit de map images en het **picture** element. Toon bij een schermbreedte kleiner dan 700px de afbeelding _world-health-day-narrow_. Bij grotere schermbreedtes wordt dit de afbeelding _world-health-day-wide_. Bekijk het resultaat en zie hoe de afbeelding zich aanpast aan de schermbreedte.
 
 ### Stap 2 - Lay-out
 
@@ -121,7 +118,7 @@ Je merkt dat het logo niet responsive is, het past zich niet aan aan de grootte 
 
 ![navigatie](images/vdb_navigatie.png)
 
-Stel een breakpoint in op **600px** en zorg dat de navigatiebalk correct getoond wordt. Zet 1 rem padding boven en onder, en 0.3rem links en rechts, op de **li** elementen zodat de gebruiker van een mobieltje genoeg plaats heeft om makkelijk een link aan te klikken.
+Stel een breakpoint in op **600px** en zorg dat de navigatiebalk correct getoond wordt. Zet 1rem padding boven en onder, en 0.3rem links en rechts, op de **li** elementen zodat de gebruiker van een mobieltje genoeg plaats heeft om makkelijk een link aan te klikken.
 
 ### Stap 3 - Contact pagina
 
@@ -139,19 +136,16 @@ Maak gebruik van technieken die je kent uit de vorige hoofdstukken om deze aanpa
 
 Er werd beslist om foto's met een aangepaste resolutie te gebruiken. Voor elke realisatie zijn daarvoor 3 versies van de afbeelding gemaakt: **450px breed, 900px breed en 1800px breed**. Je vindt deze afbeeldingen terug in de map images en herkent ze aan de naamgeving: _bestandsnaam-450w.jpg_, _bestandsnaam-900w.jpg_ en _bestandsnaam-1800w.jpg_.
 
-- De afbeelding _winkel.jpeg_ heb je enkel in het origineel formaat. Maak zelf de drie versies met de gewenste breedte aan.
+- De afbeelding _winkel.jpeg_ heb je enkel in het origineel formaat. Maak zelf de drie versies met de opgegeven breedtes aan.
 
-Op de pagina _realisaties.html_ moeten de thumbnails nu verwijzen naar de afbeeldingen van 450px breed. We volgend weer de breakpoint van 600px:
+Op de pagina _realisaties.html_ moeten de thumbnails nu verwijzen naar de afbeeldingen van 450px breed.
 
-- op een breed scherm worden de afbeeldingen twee aan twee getoond
+- op een breed scherm (>= 600px) worden de afbeeldingen twee aan twee getoond
 - op een smal scherm staan ze allemaal onder elkaar.
 
 ![realisaties](images/vdb_realisaties.png)
 
-Op elke html pagina in de **map realisaties** moet nu een afbeelding gekozen worden volgens de schermbreedte en de resolutie. Maak hiervoor op deze pagina's gebruik van het **srcset** attribuut met _width descriptors_ voor de 3 versies van de afbeelding. Het **sizes** attribuut mag je eenvoudig instellen op 100vw. Kies de _450w_ versie van de afbeelding als fallback.
-
-- komt de gekozen afbeelding overeen met wat je verwacht?
-- gebruik de responsive developer tools van je browser en bekijk de paginas op een scherm met een dpr gelijk aan 2; komt de gekozen afbeelding overeen met wat je verwacht?
+Op elke html-pagina in de **map realisaties** moet nu een afbeelding gekozen worden volgens de schermbreedte en de resolutie. Maak hiervoor op deze pagina's gebruik van het **srcset** attribuut met _width descriptors_ voor de 3 versies van de afbeelding. Het **sizes** attribuut mag je eenvoudig instellen op 100vw. Kies de _450w_ versie van de afbeelding als fallback.
 
 ### Stap 5 - Over ons
 
