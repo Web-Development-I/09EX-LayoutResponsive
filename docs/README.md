@@ -122,7 +122,7 @@ Stel een breakpoint in op **600px** en zorg dat de navigatiebalk correct getoond
 
 ### Stap 3 - Contact pagina
 
-Er werd beslist om het _Adres_ en _Contact_ gedeelte bij bredere schermen (>= 600px breed) naast elkaar te tonen. Ook het formulier wordt aangepast zoals je ziet op volgende afbeeldingen.
+Er werd beslist om het _Adres_ en _Contact_ gedeelte bij bredere schermen (>= 600px breed) naast elkaar te tonen.
 
 ![navigatie](images/vdb_contact.png)
 
