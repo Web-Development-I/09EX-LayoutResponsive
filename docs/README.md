@@ -10,7 +10,7 @@ Open de map **oefening01**. Merk op dat de index.html slechts 1 p-element bevat 
 - grootte browserscherm [1024px, 1200px[: ...**groot** scherm
 - grootte browserscherm >= 1200px: ... **extra groot** scherm
 
-Maak gebruik de **#size::before** CSS selector. Deze creëert een nieuw element en je kan de inhoud van dit element instellen door aan de **content** property de gewenste string toe te kennen. In **style.css** zie je hoe dit reeds gebeurt voor de tekst **mobiel**.
+Maak gebruik de **#grootte::before** CSS selector. Deze creëert een nieuw element en je kan de inhoud van dit element instellen door aan de **content** property de gewenste string toe te kennen. In **style.css** zie je hoe dit reeds gebeurt voor de tekst **mobiel**.
 
 Zorg er ook voor dat wanneer het scherm in _landscape modus_ gebruikt wordt de achtergrond van de pagina **orangered** gekleurd is en er **witte** tekst gebruikt wordt; in _portrait modus_ wordt de achtergrond **honeydew** gekleurd.
 
